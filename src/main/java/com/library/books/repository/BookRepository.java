@@ -1,9 +1,9 @@
 package com.library.books.repository;
 
-import com.library.books.entity.BookEntity;
+import com.library.books.entity.Book;
 import org.springframework.data.repository.PagingAndSortingRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@Repository
-public interface BookRepository extends PagingAndSortingRepository<BookEntity, Integer> {
+@RepositoryRestResource(path = "books")
+public interface BookRepository extends PagingAndSortingRepository<Book, Integer> {
 }

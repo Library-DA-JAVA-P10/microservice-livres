@@ -1,17 +1,15 @@
 package com.library.books.entity;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.hateoas.Link;
-import org.springframework.hateoas.RepresentationModel;
-
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -19,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "book")
-public class BookEntity implements Serializable {
+public class Book implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -41,5 +39,8 @@ public class BookEntity implements Serializable {
     private String overview;
     @Lob
     private String synopsis;
+
+    @OneToMany(mappedBy = "book", fetch=FetchType.EAGER)
+    private List<Exemplaire> exemplaires = new ArrayList<>();;
 
 }
