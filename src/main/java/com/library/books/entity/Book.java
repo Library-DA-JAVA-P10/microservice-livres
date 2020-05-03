@@ -41,6 +41,5 @@ public class Book implements Serializable {
     private String synopsis;
 
     @OneToMany(mappedBy = "book", fetch=FetchType.EAGER)
-    private List<Exemplaire> exemplaires = new ArrayList<>();;
-
+    private List<Exemplaire> exemplaires = new ArrayList<>();
 }

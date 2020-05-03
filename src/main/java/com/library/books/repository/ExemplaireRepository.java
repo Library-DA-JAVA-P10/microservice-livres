@@ -5,5 +5,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(path = "exemplaires")
-public interface ExemplaireRepository extends PagingAndSortingRepository<Exemplaire, Integer>, ExemplaireRepositoryCustom {
+public interface ExemplaireRepository extends PagingAndSortingRepository<Exemplaire, Integer> {
+    Exemplaire findOneByBarcode(Integer barcode);
 }
