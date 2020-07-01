@@ -9,5 +9,6 @@ import org.springframework.data.rest.core.annotation.RestResource;
 @RepositoryRestResource(path = "exemplaires")
 public interface ExemplaireRepository extends PagingAndSortingRepository<Exemplaire, Integer> {
     @RestResource(path = "byBarcode", rel="find by barcode")
-    Exemplaire findOneByBarcode(@Param("barcode") Integer barcode);
+    Exemplaire findOneByBarcode(@Param("barcode") int barcode);
+    
 }
