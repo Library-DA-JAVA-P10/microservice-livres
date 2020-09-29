@@ -29,3 +29,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Fichiers de configuration ###
+src/main/resources/bootstrap.properties
